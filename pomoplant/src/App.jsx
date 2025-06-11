@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import StudyTimer from './components/StudyTimer';
+import SproutsDisplay from './components/SproutsDisplay';
 
 export default function App() {
   const [inSession, setInSession] = useState(false);
+  const [sprouts, setSprouts] = useState(0);
 
   return (
     <>
@@ -20,9 +22,10 @@ export default function App() {
           </button>
         </div>
       ) : (
-        <div className="min-h-screen flex flex-col items-center justify-start bg-green-50 p-8">
+        <div className="min-h-screen flex flex-col items-center justify-start bg-green-50 relative p-8">
           <h2 className="text-3xl font-semibold text-green-800 mb-6">currently working</h2>
           <StudyTimer />
+          <SproutsDisplay sprouts={sprouts} setSprouts={setSprouts} />
         </div>
       )}
     </>
