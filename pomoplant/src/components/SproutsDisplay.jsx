@@ -1,16 +1,8 @@
 import { useEffect } from "react";
 
-export default function SproutsDisplay({ sprouts, setSprouts }) {
-    useEffect(() => {
-        const sproutsInterval = setInterval(() => {
-            setSprouts(prev => prev + 1);
-        }, 10000);
-
-        return () => clearInterval(sproutsInterval);
-    }, [setSprouts]);
-
+export default function SproutsDisplay({ sprouts}) {
     return (
-        <div className="absolute top-4 right-4 bg-white text-green-800 px-4 py-2 rounded shadow font-mono">
+        <div className="bg-white text-green-800 px-4 py-2 rounded shadow font-mono w-32 text-center">
             🌱 {sprouts}
         </div>
     );
